@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref=""></ion-back-button>
+   </ion-buttons>
+    <ion-title>My PG</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngFor="let data of dataList">
+
+  <ion-item>
+    <ion-card>
+      <ion-card-header>
+        <ion-img src="{{data.images}}"></ion-img>  
+      </ion-card-header>
+      <ion-card-content>
+        <ion-card-title>PG-Name : {{data.pg_name}}</ion-card-title>
+      </ion-card-content>
+      <ion-card-content>
+        Price={{data.pg_price}}
+      </ion-card-content>
+      <ion-card-content>
+        Deposite={{data.deposite}}
+      </ion-card-content>
+      <ion-card-content>
+        Amenities={{data.pg_amenities}}
+      </ion-card-content>
+      <ion-card-content>
+        Address={{data.pg_address}}
+      </ion-card-content>
+      <ion-card-content>
+        Area={{data.pg_area}}
+      </ion-card-content>
+      <ion-card-content>
+        Description={{data.pg_description}}
+      </ion-card-content>
+      <ion-card-content>
+        Status={{data.status}}
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+  <div style="margin-top: 30px; margin-left: 85px;">
+    <ion-button shape="round" type="submit" (click)="getDetail(data.id)">Update</ion-button>
+    <ion-button shape="round" type="submit" color="danger" (click)="showAlertDelete()">Delete</ion-button>
+  </div>
+</ion-content>
